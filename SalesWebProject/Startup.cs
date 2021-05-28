@@ -11,7 +11,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebProject.Data;
-
+using SalesWebProject.Services;
+using SalesWebProject.Models;
 
 namespace SalesWebProject
 {
@@ -41,6 +42,7 @@ namespace SalesWebProject
                     options.UseMySql(Configuration.GetConnectionString("SalesWebProjectContext"), builder =>
                         builder.MigrationsAssembly("SalesWebProject")));
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
         }
             
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
