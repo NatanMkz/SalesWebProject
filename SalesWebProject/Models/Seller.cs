@@ -11,25 +11,25 @@ namespace SalesWebProject.Models
         public int Id { get; set; }
 
 
-
+        [Display(Name = "Nome")]
         [Required]
         public string Name { get; set; }
 
         [Required(ErrorMessage ="{0} required")]
-        [EmailAddress(ErrorMessage = "Enter a valid e-mail")]
+        [EmailAddress(ErrorMessage = "Use um E-mail Válido")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
 
 
-        [Display(Name = "Birth Date")]
+        [Display(Name = "Data de Aniversário")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
 
 
 
-        [Display(Name = "Base Salary")]
+        [Display(Name = "Salário Base")]
         [DisplayFormat(DataFormatString ="{0:F2}")]
         public double BaseSalary { get; set; }
 
